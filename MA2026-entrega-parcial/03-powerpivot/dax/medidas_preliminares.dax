@@ -1,0 +1,24 @@
+
+ // MobiData SP - Etapa 3
+ // Medidas preliminares DAX
+
+ // Quantidade de viagens aceitas
+ Total Viagens := COUNTROWS(TfViagens)
+
+ // Total estimado de passageiros
+ Total Passageiros := SUM(TfViagens[Demanda_Estimada])
+
+ // Media de passageiros por viagem
+ Media Passageiros por Viagem := DIVIDE([Total Passageiros];[Total Viagens];0)
+
+ // Intervalo medio entre viagens
+ Intervalo Medio := AVERAGE(TfViagens[Intervalo])
+
+ // Taxa de ocupacao
+ Ocupacao Media := DIVIDE(SUM(TfViagens[Demanda_Estimada]);SUM(TfViagens[Capacidade]);0)
+
+ // Quantidade de registros rejeitados
+ Total Rejeitados := COUNTROWS(TRejeitados)
+
+ // Quantidade de metas
+ Total Metas := COUNTROWS(TfMetas)
